@@ -37,6 +37,7 @@ on init
     start vendor.qseecomd 
     start keymaster-4-0 
     start vendor.gatekeeper-1-0
+    start vendor.keymint-default
 
 on property:ro.boot.usbcontroller=*
     setprop sys.usb.controller ${ro.boot.usbcontroller}
@@ -56,7 +57,7 @@ on fs
 
 on post-fs
     mkdir /mnt/vendor/efs/DAK 0775 root root
-    restorecon -R /mnt/vendor/efs/DAK
+    restorecon --recursive --force /mnt/vendor/efs/DAK
     chown root root /mnt/vendor/efs/DAK/gakkeybox
     chmod 0644 /mnt/vendor/efs/DAK/gakkeybox
 
@@ -86,3 +87,9 @@ service vendor.gatekeeper-1-0 /system/bin/android.hardware.gatekeeper@1.0-servic
     user root 
     group root 5678
     seclabel u:r:recovery:s0  
+
+service vendor.keymint-default /system/bin/android.hardware.security.keymint-service
+    class early_hal
+    user root
+    group root drmrpc
+    seclabel u:r:recovery:s0
