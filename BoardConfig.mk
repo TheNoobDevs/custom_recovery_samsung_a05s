@@ -158,7 +158,7 @@ TW_NO_BIND_SYSTEM := true
 TW_PREPARE_DATA_MEDIA_EARLY := true
 TW_INCLUDE_LIBRESETPROP := true
 TW_LOAD_VENDOR_MODULES := $(shell echo \"$(shell ls $(DEVICE_PATH)/recovery/root/lib/modules)\")
-TW_DEVICE_VERSION := TheNoobDevs_R003V
+TW_DEVICE_VERSION := TheNoobDevs_R003M
 
 # Logging
 TARGET_USES_LOGD := true
@@ -167,4 +167,4 @@ TWRP_EVENT_LOGGING := true
 
 # Properties
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
-PRODUCT_FULL_TREBLE := true
+PRODUCT_ENFORCE_VINTF_MANIFEST := true
