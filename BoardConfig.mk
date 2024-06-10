@@ -107,7 +107,7 @@ BOARD_ROOT_EXTRA_FOLDERS := \
     spu \
     persist \
     sec_efs \
-    firmware \ 
+    firmware \
     metadata \
 
 # Recovery
