@@ -108,7 +108,7 @@ BOARD_ROOT_EXTRA_FOLDERS := \
     persist \
     sec_efs \
     firmware \ 
-    metadata
+    metadata \
 
 # Recovery
 RECOVERY_SDCARD_ON_DATA := true
