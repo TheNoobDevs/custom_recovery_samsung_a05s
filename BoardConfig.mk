@@ -141,7 +141,7 @@ TW_NO_BIND_SYSTEM := true
 TW_PREPARE_DATA_MEDIA_EARLY := true
 TW_INCLUDE_LIBRESETPROP := true
 TW_LOAD_VENDOR_MODULES := $(shell echo \"$(shell ls $(DEVICE_PATH)/recovery/root/lib/modules)\")
-TW_DEVICE_VERSION := TheNoobDevs_R003
+TW_DEVICE_VERSION := TheNoobDevs_R003B
 
 # Logging
 TARGET_USES_LOGD := true

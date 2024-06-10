@@ -1,4 +1,5 @@
 # Crypto
+
 ro.crypto.metadata_init_delete_all_keys.enabled=false
 ro.crypto.dm_default_key.options_format.version=2
 ro.crypto.volume.metadata.method=dm-default-key
@@ -10,4 +11,4 @@ keymaster_ver=4.0
 
 # USB
 vendor.usb.use_ffs_mtp=1
-persist.sys.usb.config=mtp,adb
+vendor.usb.controller=4e00000.dwc3
