@@ -1,10 +1,10 @@
-/system             emmc      /dev/block/bootdevice/by-name/system                                          flags=display=System Image;backup=1;flashimg
-/vendor             emmc     /dev/block/bootdevice/by-name/vendor                                           flags=display=Vendor Image;backup=1;flashimg
-/system_ext         emmc     /dev/block/bootdevice/by-name/system_ext                                       flags=display=System_ext Image;backup=1;flashimg
-/vendor_dlkm        emmc     /dev/block/bootdevice/by-name/vendor_dlkm                                      flags=display=Vendor_dlkm Image;backup=1;flashimg
-/product            emmc     /dev/block/bootdevice/by-name/product                                          flags=display=Product Image;backup=1;flashimg
-/odm                emmc     /dev/block/bootdevice/by-name/odm                                              flags=display=ODM Image;backup=1;flashimg
-/system_dlkm        emmc     /dev/block/bootdevice/by-name/system_dlkm                                      flags=display=System_dlkm Image;backup=1;flashimg
+/system             emmc      /dev/block/mapper/by-name/system                                          flags=display=System Image;backup=1;flashimg
+/vendor             emmc     /dev/block/mapper/by-name/vendor                                           flags=display=Vendor Image;backup=1;flashimg
+/system_ext         emmc     /dev/block/mapper/by-name/system_ext                                       flags=display=System_ext Image;backup=1;flashimg
+/vendor_dlkm        emmc     /dev/block/mapper/by-name/vendor_dlkm                                      flags=display=Vendor_dlkm Image;backup=1;flashimg
+/product            emmc     /dev/block/mapper/by-name/product                                          flags=display=Product Image;backup=1;flashimg
+/odm                emmc     /dev/block/mapper/by-name/odm                                              flags=display=ODM Image;backup=1;flashimg
+/system_dlkm        emmc     /dev/block/mapper/by-name/system_dlkm                                      flags=display=System_dlkm Image;backup=1;flashimg
 
 /boot               emmc      /dev/block/bootdevice/by-name/boot               flags=display=Boot;backup=1;flashimg
 /recovery           emmc      /dev/block/bootdevice/by-name/recovery           flags=display=Recovery;backup=1;flashimg
