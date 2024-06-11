@@ -1,9 +1,22 @@
-/system             emmc      /dev/block/mapper/by-name/system                                          flags=display=System Image;backup=1;flashimg
-/vendor             emmc     /dev/block/mapper/by-name/vendor                                           flags=display=Vendor Image;backup=1;flashimg
+system						/system		    erofs	ro			wait,logical,first_stage_mount
+system						/system		    f2fs	ro			wait,logical,first_stage_mount
+system						/system		    ext4	ro			wait,logical,first_stage_mount
+vendor						/vendor		    erofs	ro			wait,logical,first_stage_mount
+system_ext				    /system_ext	    erofs	ro			wait,logical,first_stage_mount
+product						/product	    erofs	ro			wait,logical,first_stage_mount
+odm						    /odm		    erofs	ro			wait,logical,first_stage_mount
+vendor_dlkm                 /vendor_dlkm    erofs   ro          wait,logical,first_stage_mount                                
+system_dlkm                 /system_dlkm    erofs   ro          wait,logical,first_stage_mount
+system_dlkm	                /system_dlkm	f2fs	ro	        wait,logical,first_stage_mount
+system_dlkm	                /system_dlkm	ext4	ro	        wait,logical,first_stage_mount
+
+
+/system_image             emmc      /dev/block/mapper/by-name/system                                          flags=display=System Image;backup=1;flashimg
+/vendor_image             emmc     /dev/block/mapper/by-name/vendor                                           flags=display=Vendor Image;backup=1;flashimg
 /system_ext         emmc     /dev/block/mapper/by-name/system_ext                                       flags=display=System_ext Image;backup=1;flashimg
 /vendor_dlkm        emmc     /dev/block/mapper/by-name/vendor_dlkm                                      flags=display=Vendor_dlkm Image;backup=1;flashimg
-/product            emmc     /dev/block/mapper/by-name/product                                          flags=display=Product Image;backup=1;flashimg
-/odm                emmc     /dev/block/mapper/by-name/odm                                              flags=display=ODM Image;backup=1;flashimg
+/product_image            emmc     /dev/block/mapper/by-name/product                                          flags=display=Product Image;backup=1;flashimg
+/odm_image                emmc     /dev/block/mapper/by-name/odm                                              flags=display=ODM Image;backup=1;flashimg
 /system_dlkm        emmc     /dev/block/mapper/by-name/system_dlkm                                      flags=display=System_dlkm Image;backup=1;flashimg
 
 /boot               emmc      /dev/block/bootdevice/by-name/boot               flags=display=Boot;backup=1;flashimg
