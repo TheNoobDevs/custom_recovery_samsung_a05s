@@ -10,5 +10,5 @@ keymaster_ver=4.0
 
 # USB
 vendor.usb.use_ffs_mtp=1
-persist.sys.usb.config=adb,mtp,fastboot
+persist.sys.usb.config=adb,fastboot
 vendor.usb.controller=4e00000.dwc3
