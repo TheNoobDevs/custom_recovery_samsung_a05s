@@ -58,6 +58,13 @@ BOARD_KERNEL_SEPARATED_DTBO := true
 TARGET_KERNEL_CONFIG := a05s_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/a05s
 
+# Kernel - prebuilt
+TARGET_FORCE_PREBUILT_KERNEL := true
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
+TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img 
+BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
+
+
 BOARD_MKBOOTIMG_ARGS := \
 --board=SRPWE03A002 \
 --dtb_offset=0x01f00000 \
@@ -66,12 +73,6 @@ BOARD_MKBOOTIMG_ARGS := \
 --tags_offset=0x01e00000 \
 --header_version $(BOARD_BOOTIMG_HEADER_VERSION) \
 --dtb $(TARGET_PREBUILT_DTB)
-
-# Kernel - prebuilt
-TARGET_FORCE_PREBUILT_KERNEL := true
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
-TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img 
-BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
