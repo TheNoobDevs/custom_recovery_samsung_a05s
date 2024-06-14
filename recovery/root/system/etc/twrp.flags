@@ -1,15 +1,3 @@
-system						/system		    erofs	ro			wait,logical,first_stage_mount
-system						/system		    f2fs	ro			wait,logical,first_stage_mount
-system						/system		    ext4	ro			wait,logical,first_stage_mount
-vendor						/vendor		    erofs	ro			wait,logical,first_stage_mount
-system_ext				    /system_ext	    erofs	ro			wait,logical,first_stage_mount
-product						/product	    erofs	ro			wait,logical,first_stage_mount
-odm						    /odm		    erofs	ro			wait,logical,first_stage_mount
-vendor_dlkm                 /vendor_dlkm    erofs   ro          wait,logical,first_stage_mount                                
-system_dlkm                 /system_dlkm    erofs   ro          wait,logical,first_stage_mount
-system_dlkm	                /system_dlkm	f2fs	ro	        wait,logical,first_stage_mount
-system_dlkm	                /system_dlkm	ext4	ro	        wait,logical,first_stage_mount
-
 /system_image             emmc      /dev/block/dm-0                                         flags=display=System Image;backup=1;flashimg
 /vendor_image             emmc     /dev/block/dm-5                                           flags=display=Vendor Image;backup=1;flashimg
 /system_ext         emmc     /dev/block/dm-4                                       flags=display=System_ext Image;backup=1;flashimg
