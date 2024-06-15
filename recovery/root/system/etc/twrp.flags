@@ -1,3 +1,16 @@
+# logical partitions
+system          /system          erofs      ro			flags=display="System erofs"
+system          /system          f2fs       ro			flags=display="System f2fs"
+system          /system          ext4       ro			flags=display="System ext4"
+vendor          /vendor          erofs      ro			flags=display="Vendor"
+system_ext      /system_ext      erofs      ro			flags=display="System_EXT"
+product         /product         erofs      ro			flags=display="Product"
+odm             /odm             erofs      ro			flags=display="ODM"
+vendor_dlkm     /vendor_dlkm     erofs      ro      flags=display="Vendor_DLKM"                                
+system_dlkm     /system_dlkm     erofs      ro      flags=display="System_DLKM erofs"
+system_dlkm     /system_dlkm     f2fs       ro	    flags=display="System_DLKM fsfs"
+system_dlkm     /system_dlkm     ext4       ro	    flags=display="System_DLKM ext4"
+
 # flashable logical partitions
 /system_image       emmc        /dev/block/dm-0         flags=display=System Image;backup=1;flashimg
 /odm_image          emmc        /dev/block/dm-1         flags=display=ODM Image;backup=1;flashimg
