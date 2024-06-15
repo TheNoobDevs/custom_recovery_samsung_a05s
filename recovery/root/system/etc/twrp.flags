@@ -1,11 +1,11 @@
 # flashable logical partitions
-/system_image       emmc        /dev/block/dm-0         flags=display="System Image";backup=1;flashimg
-/odm                emmc        /dev/block/dm-1         flags=display="ODM";backup=1;flashimg
-/product_image      emmc        /dev/block/dm-2         flags=display="Product Image";backup=1;flashimg
-/system_dlkm        emmc        /dev/block/dm-3         flags=display="System_dlkm Image";backup=1;flashimg
-/system_ext         emmc        /dev/block/dm-4         flags=display="System_ext Image";backup=1;flashimg
-/vendor_image       emmc        /dev/block/dm-5         flags=display="Vendor Image";backup=1;flashimg
-/vendor_dlkm        emmc        /dev/block/dm-6         flags=display="Vendor_dlkm Image";backup=1;flashimg
+/system_image       emmc        /dev/block/dm-0         flags=display="System Image";backup=1;flashimg=1
+/odm                emmc        /dev/block/dm-1         flags=display="ODM";backup=1;flashimg=1
+/product_image      emmc        /dev/block/dm-2         flags=display="Product Image";backup=1;flashimg=1
+/system_dlkm        emmc        /dev/block/dm-3         flags=display="System_dlkm Image";backup=1;flashimg=1
+/system_ext         emmc        /dev/block/dm-4         flags=display="System_ext Image";backup=1;flashimg=1
+/vendor_image       emmc        /dev/block/dm-5         flags=display="Vendor Image";backup=1;flashimg=1
+/vendor_dlkm        emmc        /dev/block/dm-6         flags=display="Vendor_dlkm Image";backup=1;flashimg=1
 
 /boot               emmc      /dev/block/bootdevice/by-name/boot               flags=display=Boot;backup=1;flashimg
 /recovery           emmc      /dev/block/bootdevice/by-name/recovery           flags=display=Recovery;backup=1;flashimg
