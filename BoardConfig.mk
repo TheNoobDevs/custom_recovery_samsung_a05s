@@ -50,16 +50,14 @@ BOARD_BOOTIMG_HEADER_VERSION := 2
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_CMDLINE := video=vfb:640x400,bpp=32,memsize=3072000 firmware_class.path=/vendor/firmware_mnt/image printk.devkmsg=on bootconfig androidboot.hardware=qcom androidboot.memcg=1 androidboot.load_modules_parallel=true androidboot.usbcontroller=4e00000.dwc3 loop.max_part=7 androidboot.selinux=permissive
 BOARD_KERNEL_PAGESIZE := 4096
+BOARD_KERNEL_OFFSET := 0x00008000
+BOARD_RAMDISK_OFFSET := 0x02000000
+BOARD_KERNEL_TAGS_OFFSET := 0x01e00000
 BOARD_KERNEL_IMAGE_NAME := Image
+BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_KERNEL_SEPARATED_DTBO := true
 TARGET_KERNEL_CONFIG := a05s_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/a05s
-
-# Kernel - prebuilt
-TARGET_FORCE_PREBUILT_KERNEL := true
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
-TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img 
-BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
 
 BOARD_MKBOOTIMG_ARGS := \
 --board=SRPWE03A002 \
@@ -67,8 +65,18 @@ BOARD_MKBOOTIMG_ARGS := \
 --kernel_offset=0x00008000 \
 --ramdisk_offset=0x02000000 \
 --tags_offset=0x01e00000 \
---header_version $(BOARD_BOOTIMG_HEADER_VERSION) \
---dtb $(TARGET_PREBUILT_DTB) 
+--header_version $(BOARD_BOOTIMG_HEADER_VERSION)
+
+# Kernel - prebuilt
+TARGET_FORCE_PREBUILT_KERNEL := true
+ifeq ($(TARGET_FORCE_PREBUILT_KERNEL),true)
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
+TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img
+BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
+BOARD_INCLUDE_DTB_IN_BOOTIMG := 
+BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
+BOARD_KERNEL_SEPARATED_DTBO := 
+endif
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
@@ -116,6 +124,7 @@ VENDOR_SECURITY_PATCH := 2021-08-01
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
+BOARD_BUILD_DISABLED_VBMETAIMAGE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
 BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
 BOARD_AVB_RECOVERY_ALGORITHM := SHA256_RSA4096
@@ -149,9 +158,8 @@ TW_HAS_DOWNLOAD_MODE := true
 TW_NO_BIND_SYSTEM := true
 TW_PREPARE_DATA_MEDIA_EARLY := true
 TW_INCLUDE_LIBRESETPROP := true
-TW_USE_NEW_MINADBD := true
 TW_LOAD_VENDOR_MODULES := $(shell echo \"$(shell ls $(DEVICE_PATH)/recovery/root/lib/modules)\")
-TW_DEVICE_VERSION := TheNoobDevs_Beta
+TW_DEVICE_VERSION := MrFluffyOven_Beta
 
 # Logging
 TARGET_USES_LOGD := true
