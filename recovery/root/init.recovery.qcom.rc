@@ -46,7 +46,7 @@ on property:ro.boot.usbcontroller=*
     wait /sys/class/udc/${ro.boot.usbcontroller} 1
 
 on boot 
-    start health-hal-2-1-samsung
+    start health-hal-2-1-qti_recovery
 
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
