@@ -3,9 +3,9 @@
 # physical partitions
 /boot               emmc      /dev/block/bootdevice/by-name/boot               flags=display=Boot;backup=1;flashimg
 /recovery           emmc      /dev/block/bootdevice/by-name/recovery           flags=display=Recovery;backup=1;flashimg
-/metadata           ext4      /dev/block/bootdevice/by-name/metadata           flags=display=Metadata
-/data               f2fs      /dev/block/bootdevice/by-name/userdata           flags=display=data
-/cache              ext4      /dev/block/bootdevice/by-name/cache              flags=display=cache
+/metadata           ext4      /dev/block/bootdevice/by-name/metadata           flags=display=Metadata;backup=0
+/data               f2fs      /dev/block/bootdevice/by-name/userdata           flags=display=data;backup=0
+/cache              ext4      /dev/block/bootdevice/by-name/cache              flags=display=cache;backup=0
 /efs                emmc      /dev/block/bootdevice/by-name/sec_efs            flags=display=efs;backup=1
 /modemst1           emmc      /dev/block/bootdevice/by-name/modemst1            flags=display=modemst1;backup=1
 /modemst2           emmc      /dev/block/bootdevice/by-name/modemst2            flags=display=modemst2;backup=1
