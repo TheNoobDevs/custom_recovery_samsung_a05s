@@ -176,6 +176,9 @@ TWRP_EVENT_LOGGING := true
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 PRODUCT_ENFORCE_VINTF_MANIFEST := true
 
+## Modules
+TW_LOAD_VENDOR_MODULES := $(shell echo \"$(shell ls $(DEVICE_PATH)/prebuilt/modules/vendor_dlkm)\")
+
 ## vendor_boot modules
 #BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/modules/modules.load.vendor_boot))
 #BOARD_VENDOR_RAMDISK_KERNEL_MODULES := $(addprefix $(DEVICE_PATH)/prebuilt/modules/vendor_boot/, $(BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD))
