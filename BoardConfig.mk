@@ -164,8 +164,8 @@ TW_PREPARE_DATA_MEDIA_EARLY := true
 TW_INCLUDE_LIBRESETPROP := true
 TW_NO_LEGACY_PROPS := true
 TW_USE_NEW_MINADBD := true
-TW_LOAD_VENDOR_MODULES := $(shell echo \"$(shell ls $(DEVICE_PATH)/recovery/root/lib/modules)\")
-TW_DEVICE_VERSION := MrFluffyOven_S2_Beta
+TW_LOAD_VENDOR_MODULES := true
+TW_DEVICE_VERSION := MrFluffyOven_S2_Beta2
 
 # Logging
 TARGET_USES_LOGD := true
@@ -188,5 +188,5 @@ RECOVERY_MODULES := $(addprefix $(DEVICE_PATH)/recovery/root/lib/modules/, $(BOA
 #BOARD_VENDOR_RAMDISK_KERNEL_MODULES := $(sort $(BOARD_VENDOR_RAMDISK_KERNEL_MODULES) $(RECOVERY_MODULES))
 
 ## vendor_dlkm modules
-#BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/modules/modules.load.vendor_dlkm))
-#BOARD_VENDOR_KERNEL_MODULES := $(wildcard $(DEVICE_PATH)/prebuilt/modules/vendor_dlkm/*.ko)
+BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/modules/modules.load.vendor_dlkm))
+BOARD_VENDOR_KERNEL_MODULES := $(wildcard $(DEVICE_PATH)/prebuilt/modules/vendor_dlkm/*.ko)
